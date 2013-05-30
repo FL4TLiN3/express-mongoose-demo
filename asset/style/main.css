@@ -1,0 +1,215 @@
+/* global style */
+ul, ol {
+    list-style: none;
+    margin: 0;
+}
+.label {
+    border-radius: 0;
+}
+p.update {
+    color: #aaa;
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+    .meta-wrapper {
+        padding-top: 60px;
+        padding-bottom: 10px;
+    }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    h1 {
+        font-size: 18px;
+        line-height: 21px;
+    }
+    p {
+        font-size: 13px;
+        line-height: 16px;
+    }
+    .navbar {
+        margin-bottom: 0;
+    }
+    .meta-wrapper {
+        margin: 0 -20px 0 -20px;
+        padding: 0 10px 20px 10px;
+    }
+}
+
+/* header */
+.meta-wrapper {
+    border-bottom: 1px solid rgba(128, 128, 128, .2);
+    box-shadow: rgba(255, 255, 255, .3) 0 1px 0;
+    background-color: #f9f9f9;
+}
+.breadcrumb {
+    padding: 0;
+    background-color: inherit;
+    margin: 2px 15px 6px 0;
+}
+.tags {
+    margin: 0 0 8px 0;
+}
+.tags li {
+    padding-right: 10px;
+    display: inline-block;
+}
+.page-thumb img {
+    border-radius: 6px;
+}
+.title-unit {
+    padding-left: 105px;
+}
+.fav, .view {
+    margin-left: 10px;
+}
+.score-buttons {
+    margin: 10px 0 10px 5px;
+}
+.article-title {
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: bold;
+}
+
+/* sub col */
+.block-ad {
+    width: 300px;
+    height: 250px;
+    margin: 20px 0 20px 0;
+}
+.suggest-unit {
+    width: 270px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: solid 5px #ddd;
+}
+.suggest-unit h4 {
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    box-shadow: rgba(255, 255, 255, .3) 0 1px 0;
+}
+.related-list {
+    margin-bottom: 30px;
+}
+.related-list li, .suggest-list li {
+    margin-bottom: 10px;
+}
+.related-list li p, .suggest-list li p  {
+    padding-left: 45px;
+}
+.ad-list {
+    width: 300px;
+}
+.ad-list li {
+    margin-bottom: 10px;
+}
+
+/* editor */
+.article-editor .title {
+    width: 100%;
+    margin: 20px 0 20px 0;
+}
+.article-editor .title .field {
+    padding: 0 40px 0 20px;
+    background-color: #FFFEEE;
+    border: 1px solid #ddd;
+}
+.article-editor .title .field input {
+    font-size: 23px;
+    width: 100%;
+    padding: 10px;
+    vertical-align: middle;
+    font-weight: bold;
+    line-height: 38px;
+    min-height: 38px;
+    border: 0;
+    background-color: inherit;
+}
+.article-editor .title .field input:focus {
+    outline: 0;
+}
+.article-editor .meta {
+    display: -webkit-box;
+    display: -moz-box;
+    margin: 0 0 20px 0;
+    width: 100%;
+}
+.article-editor .meta .thumb {
+    width: 180px;
+    border: 0;
+}
+.article-editor .meta .thumb-img {
+    width: 180px;
+    height: 135px;
+}
+.article-editor .meta .description {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    margin: 0 0 0 20px;
+}
+.article-editor .meta .description textarea {
+    width: 100%;
+    height: 135px;
+    padding: 0;
+}
+.article-editor .items {
+    margin: 40px 0 0 0;
+}
+.article-editor .item-heading {
+    display: -webkit-box;
+    display: -moz-box;
+}
+.article-editor .item-thumbnail {
+    margin-right: 10px;
+}
+.article-editor .item-meta {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+}
+.article-editor .item-heading-buttons {
+    margin-top: 30px;
+}
+.article-editor .item-meta p {
+    margin-top: 10px;
+}
+.article-editor .item-meta .id,
+.article-editor .item-meta .title {
+    margin: 0 0 0 10px;
+}
+.article-editor .item-body {
+    display: -webkit-box;
+    display: -moz-box;
+}
+.article-editor .item-thumbnails {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+}
+.article-editor .item-embed {
+    width: 510px;
+}
+.article-editor .item-embed .field {
+    padding: 0;
+    border: 0;
+    width: 510px;
+}
+
+.article-editor .item-meta .thumbnails img {
+    margin: 0 0 10px 30px;
+}
+.article-editor .item-meta .thumbnails img.selected {
+    margin: 0 0 6px 26px;
+    outline:none;
+    border: 2px solid #5bb75b;
+    border-radius: 7px;
+    box-shadow: 0 0 40px #5bb75b;
+}
+
+#_videoAddModal #_videoURL {
+    width: 100%;
+}
