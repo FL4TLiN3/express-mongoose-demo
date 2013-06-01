@@ -1,5 +1,5 @@
-var config = require('share').config = {},
-    log = require('share').log = {},
+var config = require('share').config,
+    log = require('share').log,
     express = require('express'),
     app = module.exports = express();
 

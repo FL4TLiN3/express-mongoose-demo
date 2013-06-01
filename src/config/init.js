@@ -6,26 +6,12 @@ var fs = require('fs'),
 require('date-utils');
 
 module.exports = function(app) {
-    config.path = {};
-    config.path.root       = path.join(__dirname, '..');
-    config.path.config     = path.join(config.path.root, 'config');
-    config.path.model      = path.join(config.path.root, 'model');
-    config.path.view       = path.join(__dirname, '../../asset/view');
-    config.path.controller = path.join(config.path.root, 'controller');
-    config.path.service    = path.join(config.path.root, 'service');
-    config.path.pub        = path.join(__dirname, '../../pub');
-    config.path.test       = path.join(__dirname, '../../test');
-    config.path.testHelper = path.join(config.path.test, 'helper');
-
     app.response.message = app.response.message || function(msg){
         var sess = this.req.session;
         sess.messages = sess.messages || [];
         sess.messages.push(msg);
         return this;
     };
-
-    // logging
-    require(path.join(config.path.config, 'log4js'))(app);
 
     // settings
     require(path.join(config.path.config, 'environment', 'all'))(app);

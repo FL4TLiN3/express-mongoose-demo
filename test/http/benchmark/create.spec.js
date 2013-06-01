@@ -1,8 +1,7 @@
 var path = require('path'),
     share = require('share'),
-    config = share.config,
-    log = share.log,
-    app = share.app,
+    testConfig = require(share.config.path.testConfig),
+    app = testConfig.app,
     request = require('supertest');
 
 var bookmark = require(path.join(config.path.model, 'bookmark'));
