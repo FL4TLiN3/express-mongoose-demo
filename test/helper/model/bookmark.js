@@ -36,6 +36,7 @@ exports.createBookmarks = function (done) {
 };
 
 exports.cleanBookmark = function (done) {
+    console.log(Bookmark.remove);
     Bookmark.remove({}, done);
 };
 

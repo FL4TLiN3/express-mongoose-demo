@@ -9,7 +9,7 @@ var bookmark = require(path.join(config.path.model, 'bookmark'));
 var bookmarkHelper = require(path.join(config.path.testHelperModel, 'bookmark'));
 
 describe('POST /bookmark', function() {
-    afterEach(bookmarkHelper.cleanbookmark);
+    afterEach(bookmarkHelper.cleanBookmark);
 
     it('should respond 200, application/json', function(done) {
         request(app)
