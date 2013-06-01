@@ -1,9 +1,6 @@
-var path = require('path'),
-    share = require('share'),
-    config = share.config,
-    log = share.log;
+var path = require('path');
 
-var Bookmark = require(path.join(config.path.model, 'Bookmark'));
+var Bookmark = require(path.join('../../../src/model', 'bookmark'));
 
 exports.bookmark = {};
 exports.createBookmark = function (done) {
