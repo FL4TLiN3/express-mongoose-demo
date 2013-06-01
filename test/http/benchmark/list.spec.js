@@ -5,17 +5,17 @@ var path = require('path'),
     app = share.app,
     request = require('supertest');
 
-var Article = require(path.join(config.path.model, 'Article'));
+var Bookmark = require(path.join(config.path.model, 'Bookmark'));
 
-var articleHelper = require(config.path.testHelper + '/model/article');
+var bookmarkHelper = require(config.path.testHelper + '/model/bookmark');
 
-describe('GET /admin/articles', function() {
-    beforeEach(articleHelper.createArticles);
-    afterEach(articleHelper.cleanArticle);
+describe('GET /bookmarks', function() {
+    beforeEach(bookmarkHelper.createBookmarks);
+    afterEach(bookmarkHelper.cleanBookmark);
 
     it('should respond 200, text/html', function(done) {
         request(app)
-        .get('/admin/articles')
+        .get('/bookmarks')
         .set('Accept', 'text/html')
         .expect(200)
         .end(function(error, res) {
@@ -26,7 +26,7 @@ describe('GET /admin/articles', function() {
 
     it('should respond 200, application/json', function(done) {
         request(app)
-        .get('/admin/articles')
+        .get('/bookmarks')
         .set('Accept', 'application/json')
         .expect(200)
         .end(function(error, res) {

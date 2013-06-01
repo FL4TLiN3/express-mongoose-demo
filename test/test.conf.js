@@ -1,10 +1,10 @@
 var path = require('path'),
-    share = require('share'),
+    config = require('share').config,
     express = require('express');
 
-var app = share.app = express();
+var app = exports.app = express();
 
 app.set('env', 'test');
-require('../src/config/init')(app);
+require(path.join(config.path.config, 'init'))(app);
 app.listen(app.get('port'));
 

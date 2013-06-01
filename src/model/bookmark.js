@@ -3,9 +3,10 @@ var path = require('path'),
     log = require('share').log,
     dateUtil = require('dateUtil'),
     validator = require('validator'),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),
+    Schema = mongoose.Schema;
 
-var BookmarkSchema = mongoose.Schema({
+var BookmarkSchema = new Schema({
     url: { type: String, required: true },
     isDeleted: Boolean,
     createAt: Date,
@@ -23,5 +24,5 @@ BookmarkSchema.methods.getDeleteAt = function () {
     return dateUtil.format(this.deleteAt);
 };
 
-module.exports = mongoose.model('Bookmark', BookmarkSchema);
+if (!mongoose.models.Bookmark) module.exports = mongoose.model('Bookmark', BookmarkSchema);
 

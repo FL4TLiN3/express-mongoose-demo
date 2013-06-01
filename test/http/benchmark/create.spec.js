@@ -1,12 +1,12 @@
 var path = require('path'),
-    share = require('share'),
-    testConfig = require(share.config.path.testConfig),
+    config = require('share').config,
+    testConfig = require(config.path.testConfig),
     app = testConfig.app,
     request = require('supertest');
 
 var bookmark = require(path.join(config.path.model, 'bookmark'));
 
-var bookmarkHelper = require(config.path.testHelper + '/model/bookmark');
+var bookmarkHelper = require(path.join(config.path.testHelperModel, 'bookmark'));
 
 describe('POST /bookmark', function() {
     afterEach(bookmarkHelper.cleanbookmark);

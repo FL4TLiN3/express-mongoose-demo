@@ -15,7 +15,6 @@ module.exports = function(app) {
 
     // settings
     require(path.join(config.path.config, 'environment', 'all'))(app);
-    console.log(path.join(config.path.config, 'environment', app.get('env')));
     require(path.join(config.path.config, 'environment', app.get('env')))(app);
 
     // initialize database connection
