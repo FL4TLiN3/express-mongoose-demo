@@ -1,7 +1,6 @@
 var path = require('path'),
     config = require('share').config,
-    log = require('share').log,
-    negotiate = require('express-negotiate');
+    log = require('share').log;;
 
 var Bookmark = require(path.join(config.path.model, 'Bookmark'));
 
@@ -12,11 +11,7 @@ module.exports = function (app) {
         .exec(function (error, bookmark) {
             if (error) return res.send(400);
             if (!bookmark) return res.send(404);
-            req.negotiate({
-                'application/json': function () {
-                    return res.send(bookmark);
-                }
-            });
+            return res.send(bookmark);
         });
     });
 };

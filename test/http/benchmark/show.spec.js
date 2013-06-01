@@ -5,17 +5,17 @@ var path = require('path'),
     app = share.app,
     request = require('supertest');
 
-var Article = require(path.join(config.path.model, 'Article'));
+var Bookmark = require(path.join(config.path.model, 'Bookmark'));
 
-var articleHelper = require(config.path.testHelper + '/model/article');
+var bookmarkHelper = require(config.path.testHelper + '/model/bookmark');
 
-describe('GET /admin/article/:articleId', function() {
-    beforeEach(articleHelper.createArticle);
-    afterEach(articleHelper.cleanArticle);
+describe('GET /bookmark/:bookmarkId', function() {
+    beforeEach(bookmarkHelper.createBookmark);
+    afterEach(bookmarkHelper.cleanBookmark);
 
     it('should respond 200, text/html', function(done) {
         request(app)
-        .get('/admin/article/' + articleHelper.article.id)
+        .get('/bookmark/' + bookmarkHelper.bookmark.id)
         .set('Accept', 'text/html')
         .expect(200)
         .end(function(error, res) {
@@ -26,7 +26,7 @@ describe('GET /admin/article/:articleId', function() {
 
     it('should respond 404, text/html', function(done) {
         request(app)
-        .get('/admin/article/510004860e84e30000000000')
+        .get('/bookmark/510004860e84e30000000000')
         .set('Accept', 'text/html')
         .expect(404)
         .end(function(error, res) {
@@ -37,7 +37,7 @@ describe('GET /admin/article/:articleId', function() {
 
     it('should respond 400, text/html', function(done) {
         request(app)
-        .get('/admin/article/abcdefg')
+        .get('/bookmark/abcdefg')
         .set('Accept', 'text/html')
         .expect(400)
         .end(function(error, res) {

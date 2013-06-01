@@ -29,6 +29,7 @@ module.exports = function(app) {
 
     // settings
     require(path.join(config.path.config, 'environment', 'all'))(app);
+    console.log(path.join(config.path.config, 'environment', app.get('env')));
     require(path.join(config.path.config, 'environment', app.get('env')))(app);
 
     // initialize database connection
@@ -39,6 +40,7 @@ module.exports = function(app) {
     // controller
     (function dirlookup(dir) {
         fs.readdirSync(dir).forEach(function (file) {
+            if (file.substring(0, 1)) return;
             var stat = fs.statSync(path.join(dir, file));
             if (stat.isFile()) require(path.join(dir, file.substring(0, file.length - 3)))(app);
             else if (stat.isDirectory()) dirlookup(path.join(dir, file));

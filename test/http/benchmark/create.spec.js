@@ -5,21 +5,20 @@ var path = require('path'),
     app = share.app,
     request = require('supertest');
 
-var Article = require(path.join(config.path.model, 'Article'));
+var bookmark = require(path.join(config.path.model, 'bookmark'));
 
-var articleHelper = require(config.path.testHelper + '/model/article');
+var bookmarkHelper = require(config.path.testHelper + '/model/bookmark');
 
-describe('POST /admin/article', function() {
-    afterEach(articleHelper.cleanArticle);
+describe('POST /bookmark', function() {
+    afterEach(bookmarkHelper.cleanbookmark);
 
-    it('should respond 200, text/html', function(done) {
+    it('should respond 200, application/json', function(done) {
         request(app)
-        .post('/admin/article')
+        .post('/bookmark')
         .send({
-            title: 'Test',
-            description: 'description'
+            url: 'http://google.com'
         })
-        .set('Accept', 'text/html')
+        .set('Accept', 'application/json')
         .expect(200)
         .end(function(error, res) {
             if (error) return done(error);
