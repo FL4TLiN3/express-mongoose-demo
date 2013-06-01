@@ -5,7 +5,6 @@ var path = require('path'),
     request = require('supertest');
 
 var bookmark = require(path.join(config.path.model, 'bookmark'));
-
 var bookmarkHelper = require(path.join(config.path.testHelperModel, 'bookmark'));
 
 describe('POST /bookmark', function() {
@@ -21,7 +20,7 @@ describe('POST /bookmark', function() {
         .expect(200)
         .end(function(error, res) {
             if (error) return done(error);
-            else return done();
+            else return done(null);
         });
     });
 });

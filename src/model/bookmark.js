@@ -1,8 +1,4 @@
-var path = require('path'),
-    config = require('share').config,
-    log = require('share').log,
-    dateUtil = require('dateUtil'),
-    validator = require('validator'),
+var dateUtil = require('dateUtil'),
     mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
@@ -26,5 +22,4 @@ BookmarkSchema.methods.getDeleteAt = function () {
 
 if (!mongoose.models.Bookmark) mongoose.model('Bookmark', BookmarkSchema);
 module.exports = mongoose.model('Bookmark');
-// module.exports = mongoose.model('Bookmark', BookmarkSchema);
 
