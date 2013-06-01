@@ -51,12 +51,12 @@ module.exports = function(grunt) {
                 globals: ['should'],
                 timeout: 3000,
                 ignoreLeaks: false,
-                grep: '*-test',
                 ui: 'bdd',
                 reporter: 'tap'
             },
             all: {
-                src: ['test/**/*.js']
+                // src: ['test/**/*.spec.js']
+                src: ['test/**/create.spec.js']
             }
         },
         watch: {
@@ -74,9 +74,9 @@ module.exports = function(grunt) {
                     livereload: true
                 }
             },
-            jade: {
-                files: ['asset/view/**/*.jade'],
-                tasks: ['jade'],
+            test: {
+                files: ['src/**/*.js', 'test/**/*.js'],
+                tasks: ['simplemocha'],
                 options: {
                     livereload: true
                 }
