@@ -3,11 +3,11 @@ var path = require('path'),
     log = require('share').log,
     negotiate = require('express-negotiate');
 
-var Article = require(path.join(config.path.model, 'Article'));
+var Bookmark = require(path.join(config.path.model, 'Bookmark'));
 
 module.exports = function (app) {
     var changeDeleteStatus = function (req, res, isDelete) {
-        Article
+        Bookmark
         .findOne({ _id: req.params.articleId })
         .exec(function (error, article) {
             if (error) return res.send(400);

@@ -3,47 +3,41 @@ var path = require('path'),
     config = share.config,
     log = share.log;
 
-var Article = require(path.join(config.path.model, 'Article'));
+var Bookmark = require(path.join(config.path.model, 'Bookmark'));
 
-exports.article = {};
-exports.createArticle = function (done) {
-    (new Article({
-        title: 'Unit Testing...',
-        description: 'Unit Testing...',
-        isForceRemoved: false,
-        isPublished: false,
+exports.bookmark = {};
+exports.createBookmark = function (done) {
+    (new Bookmark({
+        url: 'http://google.com',
         isDeleted: false,
         createAt: new Date(),
         updateAt: null,
         deleteAt: null
-    })).save(function (error, article) {
-        exports.article = article;
+    })).save(function (error, bookmark) {
+        exports.bookmark = bookmark;
         done();
     });
 };
 
-exports.createArticles = function (done) {
+exports.createBookmarks = function (done) {
     var size = 10, ct = 0;
     var callback = function () {
         if (++ct >= size) done();
     };
     for (var i = 0; i < size; i++) {
-        (new Article({
-            title: 'Unit Testing...',
-            description: 'Unit Testing...',
-            isForceRemoved: false,
-            isPublished: false,
+        (new Bookmark({
+            url: 'http://google.com',
             isDeleted: false,
             createAt: new Date(),
             updateAt: null,
             deleteAt: null
-        })).save(function (error, article) {
+        })).save(function (error, bookmark) {
             callback();
         });
     }
 };
 
-exports.cleanArticle = function (done) {
-    Article.remove({}, done);
+exports.cleanBookmark = function (done) {
+    Bookmark.remove({}, done);
 };
 
