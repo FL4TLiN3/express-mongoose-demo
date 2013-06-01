@@ -5,17 +5,17 @@ var path = require('path'),
     app = share.app,
     request = require('supertest');
 
-var Article = require(path.join(config.path.model, 'Article'));
+var Bookmark = require(path.join(config.path.model, 'Bookmark'));
 
-var articleHelper = require(config.path.testHelper + '/model/article');
+var bookmarkHelper = require(config.path.testHelper + '/model/bookmark');
 
-describe('DELETE /admin/articles/:articleId', function() {
-    beforeEach(articleHelper.createArticle);
-    afterEach(articleHelper.cleanArticle);
+describe('DELETE /bookmarks/:bookmarkId', function() {
+    beforeEach(bookmarkHelper.createBookmark);
+    afterEach(bookmarkHelper.cleanBookmark);
 
     it('should respond 200, application/json', function(done) {
         request(app)
-        .del('/admin/article/' + articleHelper.article.id)
+        .del('/bookmark/' + bookmarkHelper.bookmark.id)
         .set('Accept', 'application/json')
         .expect(200)
         .end(function(error, res) {
@@ -26,7 +26,7 @@ describe('DELETE /admin/articles/:articleId', function() {
 
     it('should respond 404, application/json', function(done) {
         request(app)
-        .del('/admin/article/510004860e84e30000000000')
+        .del('/bookmark/510004860e84e30000000000')
         .set('Accept', 'application/json')
         .expect(404)
         .end(function(error, res) {
@@ -37,7 +37,7 @@ describe('DELETE /admin/articles/:articleId', function() {
 
     it('should respond 400, application/json', function(done) {
         request(app)
-        .del('/admin/article/abcdefg')
+        .del('/bookmark/abcdefg')
         .set('Accept', 'application/json')
         .expect(400)
         .end(function(error, res) {
@@ -47,13 +47,13 @@ describe('DELETE /admin/articles/:articleId', function() {
     });
 });
 
-describe('PUT /admin/articles/:articleId/undelete', function() {
-    beforeEach(articleHelper.createArticle);
-    afterEach(articleHelper.cleanArticle);
+describe('PUT /bookmarks/:bookmarkId/undelete', function() {
+    beforeEach(bookmarkHelper.createBookmark);
+    afterEach(bookmarkHelper.cleanBookmark);
 
     it('should respond 200, application/json', function(done) {
         request(app)
-        .put('/admin/article/' + articleHelper.article.id + '/undelete')
+        .put('/bookmark/' + bookmarkHelper.bookmark.id + '/undelete')
         .set('Accept', 'application/json')
         .expect(200)
         .end(function(error, res) {
@@ -64,7 +64,7 @@ describe('PUT /admin/articles/:articleId/undelete', function() {
 
     it('should respond 404, application/json', function(done) {
         request(app)
-        .put('/admin/article/510004860e84e30000000000/undelete')
+        .put('/bookmark/510004860e84e30000000000/undelete')
         .set('Accept', 'application/json')
         .expect(404)
         .end(function(error, res) {
@@ -75,7 +75,7 @@ describe('PUT /admin/articles/:articleId/undelete', function() {
 
     it('should respond 400, application/json', function(done) {
         request(app)
-        .put('/admin/article/abcdefg/undelete')
+        .put('/bookmark/abcdefg/undelete')
         .set('Accept', 'application/json')
         .expect(400)
         .end(function(error, res) {
