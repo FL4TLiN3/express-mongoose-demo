@@ -24,5 +24,7 @@ BookmarkSchema.methods.getDeleteAt = function () {
     return dateUtil.format(this.deleteAt);
 };
 
-if (!mongoose.models.Bookmark) module.exports = mongoose.model('Bookmark', BookmarkSchema);
+if (!mongoose.models.Bookmark) mongoose.model('Bookmark', BookmarkSchema);
+module.exports = mongoose.model('Bookmark');
+// module.exports = mongoose.model('Bookmark', BookmarkSchema);
 
