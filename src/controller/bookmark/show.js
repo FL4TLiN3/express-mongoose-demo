@@ -1,6 +1,6 @@
 var path = require('path'),
     config = require('share').config,
-    log = require('share').log;;
+    log = require('share').log;
 
 var Bookmark = require(path.join(config.path.model, 'Bookmark'));
 

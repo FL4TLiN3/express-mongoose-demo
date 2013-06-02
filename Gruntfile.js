@@ -43,7 +43,8 @@ module.exports = function(grunt) {
                     'test/**/create.spec.js',
                     'test/**/delete.spec.js',
                     'test/**/list.spec.js',
-                    'test/**/show.spec.js'
+                    'test/**/show.spec.js',
+                    'test/**/update.spec.js'
                 ]
                 // src: ['test/**/*.spec.js']
             }
