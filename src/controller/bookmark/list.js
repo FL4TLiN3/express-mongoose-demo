@@ -10,11 +10,7 @@ module.exports = function (app) {
         .find()
         .sort('-createAt')
         .exec(function (error, bookmarks) {
-            req.negotiate({
-                'application/json': function () {
-                    return res.send(bookmarks);
-                }
-            });
+            return res.send(bookmarks);
         });
     });
 };

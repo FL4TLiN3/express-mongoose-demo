@@ -10,7 +10,7 @@ var bookmarkHelper = require(path.join(config.path.testHelperModel, 'bookmark'))
 describe('POST /bookmark', function() {
     afterEach(bookmarkHelper.cleanBookmark);
 
-    it('should respond 200, application/json', function(done) {
+    it('should respond 200', function(done) {
         request(app)
         .post('/bookmark')
         .send({

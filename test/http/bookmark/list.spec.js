@@ -1,30 +1,17 @@
 var path = require('path'),
-    share = require('share'),
-    config = share.config,
-    log = share.log,
-    app = share.app,
+    config = require('share').config,
+    testConfig = require(config.path.testConfig),
+    app = testConfig.app,
     request = require('supertest');
 
-var Bookmark = require(path.join(config.path.model, 'Bookmark'));
-
-var bookmarkHelper = require(config.path.testHelper + '/model/bookmark');
+var bookmark = require(path.join(config.path.model, 'bookmark'));
+var bookmarkHelper = require(path.join(config.path.testHelperModel, 'bookmark'));
 
 describe('GET /bookmarks', function() {
     beforeEach(bookmarkHelper.createBookmarks);
     afterEach(bookmarkHelper.cleanBookmark);
 
-    it('should respond 200, text/html', function(done) {
-        request(app)
-        .get('/bookmarks')
-        .set('Accept', 'text/html')
-        .expect(200)
-        .end(function(error, res) {
-            if (error) return done(error);
-            else return done();
-        });
-    });
-
-    it('should respond 200, application/json', function(done) {
+    it('should respond 200', function(done) {
         request(app)
         .get('/bookmarks')
         .set('Accept', 'application/json')
