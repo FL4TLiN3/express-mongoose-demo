@@ -16,20 +16,16 @@ module.exports = function (app) {
             else bookmark.updateAt = new Date();
             bookmark.save(function (error, bookmark) {
                 if (error) return res.send(500);
-                req.negotiate({
-                    'application/json': function () {
-                        return res.send(bookmark);
-                    }
-                });
+                return res.send(bookmark);
             });
         });
     };
 
-    app.del('/admin/bookmark/:bookmarkId', function (req, res) {
+    app.del('/bookmark/:bookmarkId', function (req, res) {
         changeDeleteStatus(req, res, true);
     });
 
-    app.put('/admin/bookmark/:bookmarkId/undelete', function (req, res) {
+    app.put('/bookmark/:bookmarkId/undelete', function (req, res) {
         changeDeleteStatus(req, res, false);
     });
 };

@@ -39,8 +39,12 @@ module.exports = function(grunt) {
                 reporter: 'tap'
             },
             all: {
+                src: [
+                    'test/**/create.spec.js',
+                    'test/**/delete.spec.js',
+                    'test/**/create.spec.js'
+                ]
                 // src: ['test/**/*.spec.js']
-                src: ['test/**/create.spec.js']
             }
         },
         watch: {
@@ -60,10 +64,7 @@ module.exports = function(grunt) {
             },
             test: {
                 files: ['src/**/*.js', 'test/**/*.js'],
-                tasks: ['simplemocha'],
-                options: {
-                    livereload: true
-                }
+                tasks: ['simplemocha']
             },
             compass: {
                 files: ['asset/style/**/*.scss'],
@@ -90,5 +91,5 @@ module.exports = function(grunt) {
     }
 
     grunt.registerTask('dev', ['concurrent:dev']);
-    grunt.registerTask('test', ['simplemocha']);
+    grunt.registerTask('test', ['watch:test']);
 };
