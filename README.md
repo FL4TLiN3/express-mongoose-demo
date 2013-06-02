@@ -28,7 +28,41 @@ ln -s lib/share.js node_modules/share/index.html
 grunt nodemon
 ```
 
-then access `http://localhost:3000` by your browser.
+then your RESTful server is standing by.
+
+you can access:
+
+### GET `http://localhost:3000/bookmarks`
+
+list of all bookmarks.
+
+### GET `http://localhost:3000/bookmark/:bookmarkID`
+
+show specified bookmark.
+
+@param
++ `bookmarkID`
+
+### POST `http://localhost:3000/bookmark`
+
+save a bookmark.
+
+@param
++ `url`
+
+### PUT `http://localhost:3000/bookmark/:bookmarkID`
+
+update specified bookmark.
+
+@param
++ `bookmarkID`
+
+### DELETE `http://localhost:3000/bookmark/:bookmarkID`
+
+delete specified bookmark.
+
+@param
++ `bookmarkID`
 
 ## test
 
