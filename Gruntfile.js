@@ -22,22 +22,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-        jade: {
-            compile: {
-                options: {
-                    data: {
-                        debug: false
-                    }
-                },
-                files: [{
-                    expand: true,
-                    cwd: 'src/template/',
-                    src: ['**/*.jade'],
-                    dest: 'public/',
-                    ext: '.html'
-                }]
-            }
-        },
         compass: {
             dev: {
                 options: {
