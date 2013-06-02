@@ -32,32 +32,32 @@ then your RESTful server is standing by.
 
 you can access:
 
-### GET `http://localhost:3000/bookmarks`
+### GET `/bookmarks`
 
 list of all bookmarks.
 
-### GET `http://localhost:3000/bookmark/:bookmarkID`
+### GET `/bookmark/:bookmarkID`
 
 show specified bookmark.
 
 @param
 + `bookmarkID`
 
-### POST `http://localhost:3000/bookmark`
+### POST `/bookmark`
 
 save a bookmark.
 
 @param
 + `url`
 
-### PUT `http://localhost:3000/bookmark/:bookmarkID`
+### PUT `/bookmark/:bookmarkID`
 
 update specified bookmark.
 
 @param
 + `bookmarkID`
 
-### DELETE `http://localhost:3000/bookmark/:bookmarkID`
+### DELETE `/bookmark/:bookmarkID`
 
 delete specified bookmark.
 
