@@ -39,14 +39,7 @@ module.exports = function(grunt) {
                 reporter: 'tap'
             },
             all: {
-                src: [
-                    'test/**/create.spec.js',
-                    'test/**/delete.spec.js',
-                    'test/**/list.spec.js',
-                    'test/**/show.spec.js',
-                    'test/**/update.spec.js'
-                ]
-                // src: ['test/**/*.spec.js']
+                src: ['test/**/*.spec.js']
             }
         },
         watch: {
