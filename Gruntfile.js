@@ -43,13 +43,6 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-            nodemon: {
-                files: ['src/**/*.js'],
-                tasks: [],
-                options: {
-                    livereload: true
-                }
-            },
             requirejs: {
                 files: ['asset/js/**/*.js'],
                 tasks: ['requirejs'],
